@@ -1,0 +1,13 @@
+# Never commit these (lab rules)
+*.vdi
+*.vmdk
+*.vhd
+*.vhdx
+*.ova
+*.ovf
+*.iso
+*.pem
+*.key
+id_rsa*
+.env
+*.tgz
