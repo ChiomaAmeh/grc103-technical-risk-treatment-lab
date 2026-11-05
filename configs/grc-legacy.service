@@ -1,0 +1,7 @@
+[Unit]
+Description=GRC lab legacy endpoint
+[Service]
+User=www-data
+ExecStart=/usr/bin/python3 -m http.server 8080 --bind 0.0.0.0 --directory /srv/grc-legacy
+[Install]
+WantedBy=multi-user.target
