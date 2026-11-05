@@ -1,6 +1,9 @@
 # Technical Risk Treatment Lab for Northbridge Services (fictional)
 
-**Student:** Chioma Ameh  **Registration No.:** C11/26/CGRCE/17567
+**Student:** Chioma Ameh 
+
+**Registration No.:** C11/26/CGRCE/17567
+
 **Course:** GRC103 Risk Assessment and Management Techniques - Module 3 (ICDFA)
 
 Lab: Ubuntu Server 24.04 (target) + Kali Linux (tester) on an isolated host-only network.
