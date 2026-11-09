@@ -2,3 +2,7 @@ test_id,source_ip,url,expected,actual,timestamp
 B1,192.168.56.101,http://192.168.56.20/,200 (listing),200,2026-11-09T12:48:34+01:00
 B2,192.168.56.101,http://192.168.56.20/archive/dummy-records.txt,200 (file readable),200,2026-11-09T12:48:34+01:00
 B3,192.168.56.101,http://192.168.56.20:8080/,200 (legacy open),200,2026-11-09T12:48:34+01:00
+A1,192.168.56.101,http://192.168.56.20:8080/,refused/no response,NO-RESPONSE(timeout/refused),2026-11-09T12:55:14+01:00
+A2,192.168.56.101,http://192.168.56.20/public/,200,200,2026-11-09T12:55:14+01:00
+A1,192.168.56.101,http://192.168.56.20:8080/,refused/no response,NO-RESPONSE(timeout/refused),2026-11-09T14:03:16+01:00
+A2,192.168.56.101,http://192.168.56.20/public/,200,200,2026-11-09T14:03:16+01:00
