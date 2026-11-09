@@ -1,0 +1,10 @@
+# Nmap 7.95 scan initiated Mon Nov  9 12:48:33 2026 as: /usr/lib/nmap/nmap --privileged -sT -p 80,8080 -oN baseline-ports.txt 192.168.56.20
+Nmap scan report for 192.168.56.20
+Host is up (0.0042s latency).
+
+PORT     STATE SERVICE
+80/tcp   open  http
+8080/tcp open  http-proxy
+MAC Address: 08:00:27:33:67:49 (PCS Systemtechnik/Oracle VirtualBox virtual NIC)
+
+# Nmap done at Mon Nov  9 12:48:33 2026 -- 1 IP address (1 host up) scanned in 0.38 seconds
