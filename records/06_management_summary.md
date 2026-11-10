@@ -1,16 +1,16 @@
-# Management Summary (one page)
-Northbridge Services — Technical Risk Treatment | Student: Chioma Ameh | ID: C11/26/CGRCE/17567
+# Management Summary
+Northbridge Services - Technical Risk Treatment | Chioma Ameh | Reg. No. C11/26/CGRCE/17567
 
 **Situation.** The internal document server exposed an unnecessary legacy service (port 8080) and a browsable directory of records, with no network restrictions and no backup.
 
-**What was done and proved (measured).** [Fill from your results] Legacy service retired (8080 open -> closed, portal still HTTP 200); archive moved out of the web root (direct file access 200 -> 403); firewall restricts access to the approved client (unapproved source timed out; UFW BLOCK log: found/not found); a deleted portal file was restored with matching SHA-256 in ___ seconds.
+**What was done and proved (measured).** The legacy service was retired: port 8080 went from open to closed while the approved portal stayed at HTTP 200; the change was rolled back and re-applied successfully. The archive was moved out of the web root: direct access to the records file went from 200 to 403. A source-based firewall now allows only the approved client: the approved source received 200, the unapproved source timed out, and the kernel log recorded [UFW BLOCK] for it while Nginx logged nothing. A deleted portal file was restored from backup with a matching SHA-256 hash in 490 seconds (including manual steps).
 
-**Residual risk.** [Fill] Plain HTTP remains; the allow-list relies on source IP; the backup is on the same host. Residual scores: R1 __, R2 __, R3 __, R4 __.
+**Residual risk.** Plain HTTP remains; the allow-list relies on the source IP; the backup is on the same host. Residual scores: R1 3 Low, R2 8 Medium, R3 6 Medium, R4 6 Medium.
 
-**Recommendation.** Adopt Option A (hardening) and Option C (TLS); add Option B (managed off-host backup) to cover host loss. Total first-year cost $610 (fictional, assumption-based). Accept plain HTTP only temporarily (14 days, dummy data only, simulated approval) until TLS is in place.
+**Recommendation (assumption-based costs).** Adopt Option A hardening (done, $150), Option C TLS ($100) and Option B managed off-host backup ($360): total first-year cost $610. Accept plain HTTP only temporarily (14 days, dummy data only, simulated approval) until TLS is in place.
 
-**Monitoring.** Five checks (availability, open ports, recovery test, retired-service drift, firewall state) with owners and escalation — see monitoring plan.
+**Monitoring.** Five checks - availability, open ports, recovery test, retired-service drift, firewall state - each with owner, threshold and escalation (records/05_monitoring_plan.md).
 
-**Decisions needed.** Approve the 14-day acceptance and the TLS + managed-backup budget (simulated).
+**Decisions needed.** Approve the 14-day acceptance and the TLS plus managed-backup budget (simulated).
 
-*Measured results come from the lab. Financial figures and approvals are assumptions/simulations.*
+*Measured results come from the laboratory; approvals, financial figures and the managed-backup offer are simulated or assumed.*
