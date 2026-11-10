@@ -7,4 +7,4 @@ Student: Chioma Ameh | ID: C11/26/CGRCE/17567
 | F2 | (second IP) | http://SERVER/public/ | timeout | | | ufw-block-log.txt line # |
 | L2 | (Kali IP) | /archive/ | 403 | | | grc_access.log line # |
 
-Rule: do NOT invent log lines. If an event is missing, write "log not collected — control UNVERIFIED (not failed)" and explain.
+Rule: do NOT invent log lines. If an event is missing, write "log not collected - control UNVERIFIED (not failed)" and explain.
