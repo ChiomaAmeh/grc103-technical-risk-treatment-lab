@@ -1,0 +1,6 @@
+Status: active
+
+     To                         Action      From
+     --                         ------      ----
+[ 1] 80/tcp                     ALLOW IN    192.168.56.101            
+
