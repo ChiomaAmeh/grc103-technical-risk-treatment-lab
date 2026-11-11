@@ -7,16 +7,16 @@
 | **Course** | GRC103 Risk Assessment and Management Techniques - Module 3 practical (ICDFA) |
 | **Repository** | https://github.com/ChiomaAmeh/grc103-technical-risk-treatment-lab |
 | **Final report (PDF)** | [`report/Technical_Risk_Treatment_Report_Chioma_Ameh_C11-26-CGRCE-17567.pdf`](report/) |
-| **Recorded demonstration** | https://drive.google.com/file/d/1ylNHqidJy-WEECjVXbpER1MnK2liPe3q/view?usp=drive_link |
+| **Recorded demonstration** | **[ADD LINK HERE]** (read-along script: [`demo/DEMO_SCRIPT.md`](demo/DEMO_SCRIPT.md)) |
 
-> All data is fictional. I used only my own isolated laboratory systems. This repository contains no passwords, tokens, private keys, or VM disk images.
-> **Measured results** come from my lab outputs. **Approvals, the managed-backup offer, costs, and annual-loss figures are simulated or assumed** and are labelled as such.
+> All data is fictional. Only my own isolated laboratory systems were used. No passwords, tokens, private keys or VM disk images are in this repository.
+> **Measured results** come from my lab outputs. **Approvals, the managed-backup offer, costs and annual-loss figures are simulated or assumed** and are labelled as such.
 
 ---
 
 ## 1. What this lab proves
 
-I acted as a GRC analyst and technical control implementer for Northbridge Services. Its internal document server exposed an unnecessary legacy service and a browsable directory of records. I built a baseline, implemented four treatments, validated each with tests and logs, restored a deleted file with hash verification, and justified avoidance, mitigation, transfer, and acceptance decisions.
+I acted as GRC analyst and technical control implementer for Northbridge Services. Its internal document server exposed an unnecessary legacy service and a browsable directory of records. I built a baseline, implemented four treatments, validated each with tests and logs, restored a deleted file with hash verification, and justified avoidance, mitigation, transfer and acceptance decisions.
 
 | Risk | Baseline | Treatment | Measured result (before -> after) | Residual |
 |---|---|---|---|---|
@@ -41,7 +41,7 @@ Scale: likelihood (1-5) x impact (1-5); bands 1-4 Low, 5-9 Medium, 10-16 High, 1
    |   eth1  192.168.56.101  ------------>  enp0s8 192.168.56.20       |
    |   (approved source)        HTTP:80      Nginx 1.24  /public/       |
    |   +192.168.56.30 (temporary,            UFW: allow .101 -> 80/tcp  |
-   |    unapproved test source)              legacy: 8080 RETIRED       |
+   |    unapproved test source)              legacy :8080 RETIRED       |
    |   eth0 = NAT (Git/GitHub only)          enp0s3 = NAT, taken DOWN   |
    +-------------------------------------------------------------------+
 ```
@@ -52,7 +52,7 @@ Scale: likelihood (1-5) x impact (1-5); bands 1-4 Low, 5-9 Medium, 10-16 High, 1
 | Kali | 2025.4, host-only `192.168.56.101` (eth1) |
 | Software | Nginx 1.24.0, UFW 0.36.2, Python 3.12 (legacy endpoint), curl, nmap 7.95 |
 | NAT handling | Ubuntu's NAT adapter was used only to install packages, then taken down (`ip link set enp0s3 down`) before any baseline scan. Kali's NAT stayed up only to push to GitHub. |
-| Console limitation | The VirtualBox text console cannot paste, so long command sequences were saved as scripts (`scripts/u1_build.sh` ... `u7_ship.sh`), served from Kali, downloaded to Ubuntu, and run on the Ubuntu console. |
+| Console limitation | The VirtualBox text console cannot paste, so long command sequences were saved as scripts (`scripts/u1_build.sh` ... `u7_ship.sh`), served from Kali, downloaded to Ubuntu and run on the Ubuntu console. |
 
 ---
 
@@ -65,7 +65,7 @@ report/                            <- final PDF report (+ report source skeleton
 records/
   01_risk_register.md              baseline and residual risk register
   02_change_and_rollback.md        change + rollback records (approvals simulated)
-  03_treatment_decision_records.md avoidance / mitigation / transfer/acceptance
+  03_treatment_decision_records.md avoidance / mitigation / transfer / acceptance
   04_evidence_table.md             every test: source, request, expected, actual, timestamps, log lines, clock offsets
   05_monitoring_plan.md            five monitoring checks with owners, thresholds, escalation
   06_management_summary.md         one-page management summary
@@ -95,9 +95,9 @@ evidence/
 | 11 Decisions | Four strategies with owners, limits, expiry and triggers | `records/03_*`, `records/02_*` |
 | 12 Costs and residual risk | Option costs, ALE scenario, residual scores, monitoring, management summary | `calculations/cost_analysis.xlsx`, `records/01`, `05`, `06`, report Section 7-10 |
 
-### Required evidence checklist (from the assignment)
+### Required-evidence checklist (from the assignment)
 1. **Baseline assessment and risk register** - baseline files, screenshots 05-07, 08a, `records/01`
-2. **Avoidance and preventive controls** - avoidance, archive, and firewall evidence (steps 6-8)
+2. **Avoidance and preventive controls** - avoidance, archive and firewall evidence (steps 6-8)
 3. **Control validation and logs** - `records/04_evidence_table.md` (permitted and blocked tests, timestamps, source addresses, log extracts)
 4. **Backup and recovery** - backup, simulated loss, restoration, hash verification, observed recovery time (490 s)
 5. **Treatment decisions and financial analysis** - `records/03`, `calculations/cost_analysis.xlsx`, residual risk in `records/01`
@@ -141,14 +141,14 @@ evidence/
 
 ## 7. Limitations and honest notes
 
-- **Clock drift.** Ubuntu had no time sync (NAT down), and its clock drifted and stopped while the VM was paused. The offset to Kali was measured per test group (about 4-15 min on 9 Nov; about 8 h 46 min-8 h 57 min on 10 Nov). Log lines are matched by source address, request sequence, and spacing, as well as time.
+- **Clock drift.** Ubuntu had no time sync (NAT down) and its clock drifted and stopped while the VM was paused. The offset to Kali was measured per test group (about 4-15 min on 9 Nov; about 8 h 46 min-8 h 57 min on 10 Nov). Log lines are matched by source address, request sequence and spacing as well as time.
 - **Recovery time of 490 s** includes the Kali availability check and a mistyped command; the restore itself took about a second.
 - **Same-host backup** does not protect against host loss - the reason for the proposed managed off-host backup.
 - **Source-IP allow-listing** is a weak control on a shared network (spoofing is possible); production needs authentication and TLS.
 - **Rollback** was executed for CHG-01 and CHG-04; for CHG-02 and CHG-03 it is documented but not executed.
-- **Order of NAT disconnection.** The exposed services were built, and the NAT interface was taken down immediately afterwards, before any baseline scan, so all tests ran on the isolated network.
+- **Order of NAT disconnection.** The exposed services were built and the NAT interface was taken down immediately afterwards, before any baseline scan, so all tests ran on the isolated network.
 - An early baseline run (before the services existed) was discarded and is not used as evidence.
-- Approvals, owners, the managed-backup contract, costs, and ALE figures are **simulated or assumed**.
+- Approvals, owners, the managed-backup contract, costs and ALE figures are **simulated or assumed**.
 
 ## 8. Security note
-No credentials are stored in the repository. `.gitignore` blocks disk images (`*.vdi`, `*.vmdk`, `*.ova`, `*.iso`), keys, and archives. GitHub access used a short-lived personal access token that was never committed.
+No credentials are stored in the repository. `.gitignore` blocks disk images (`*.vdi`, `*.vmdk`, `*.ova`, `*.iso`), keys and archives. GitHub access used a short-lived personal access token that was never committed.
