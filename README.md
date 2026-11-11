@@ -7,10 +7,10 @@
 | **Course** | GRC103 Risk Assessment and Management Techniques - Module 3 practical (ICDFA) |
 | **Repository** | https://github.com/ChiomaAmeh/grc103-technical-risk-treatment-lab |
 | **Final report (PDF)** | [`report/Technical_Risk_Treatment_Report_Chioma_Ameh_C11-26-CGRCE-17567.pdf`](report/) |
-| **Recorded demonstration** | **[ADD LINK HERE]** (read-along script: [`demo/DEMO_SCRIPT.md`](demo/DEMO_SCRIPT.md)) |
+| **Recorded demonstration** | https://drive.google.com/file/d/1ylNHqidJy-WEECjVXbpER1MnK2liPe3q/view?usp=drive_link |
 
-> All data is fictional. Only my own isolated laboratory systems were used. No passwords, tokens, private keys or VM disk images are in this repository.
-> **Measured results** come from my lab outputs. **Approvals, the managed-backup offer, costs and annual-loss figures are simulated or assumed** and are labelled as such.
+> All data is fictional. I used only my own isolated laboratory systems. This repository contains no passwords, tokens, private keys, or VM disk images.
+> **Measured results** come from my lab outputs. **Approvals, the managed-backup offer, costs, and annual-loss figures are simulated or assumed** and are labelled as such.
 
 ---
 
