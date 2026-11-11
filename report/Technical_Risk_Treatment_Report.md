@@ -1,7 +1,7 @@
 # Technical Risk Treatment: Implementing and Validating Security Controls
 
 **Student:** Chioma Ameh | **Registration No.:** C11/26/CGRCE/17567 | **Course:** GRC103 - Module 3 practical (ICDFA) | **Date:** 10 November 2026
-**Repository:** https://github.com/ChiomaAmeh/grc103-technical-risk-treatment-lab | **PDF version:** `Technical_Risk_Treatment_Report_Chioma_Ameh_C11-26-CGRCE-17567.pdf` | **Demonstration:** link in the repository README (top table) and in the submission; script in `demo/DEMO_SCRIPT.md`
+**Repository:** https://github.com/ChiomaAmeh/grc103-technical-risk-treatment-lab | **PDF version:** `Technical_Risk_Treatment_Report_Chioma_Ameh_C11-26-CGRCE-17567.pdf` | **Demonstration:** link in the repository README (top table) and in the submission.
 
 > Measured results come from my own isolated lab (Ubuntu Server + Kali on a VirtualBox host-only network, fictional data only). Approvals, owners, the managed-backup offer, costs and annual-loss figures are **simulated or assumed**. Missing evidence is stated, not invented.
 
