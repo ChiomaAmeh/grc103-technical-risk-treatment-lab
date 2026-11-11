@@ -11,10 +11,11 @@ Ubuntu's clock runs ~15 minutes behind Kali's (NAT disconnected, no time sync); 
 | 00d | 00d_ubuntu_storage_summary.png | Setup | 25 GB virtual disk layout (isolated VM disk only) | Included |
 | 00e | 00e_ubuntu_packages_installed.png | Setup | nginx 1.24.0, ufw, python3, curl installed | Included |
 | 01a | 01a_ubuntu_identity.png | Setup | Student name/ID, Ubuntu 24.04.5 LTS, VirtualBox, clock | Included |
-| 01b | 01b_kali_clock.png | Setup | Kali clock for offset comparison | TO TAKE |
-| 01 | 01_vbox_vm_list.png | Setup | Ubuntu Server and Kali VMs | TO TAKE |
+
+| 01 | 01_vbox_kali_snapshot1_vm_list.png | Setup | VirtualBox Manager: Kali with 'Snapshot 1' (existing checkpoint), 2 vCPU / 2 GB, adapters NAT + Host-only; other VMs powered off | Included |
+| 01b | 01b_vbox_vm_list_both_running.png | Setup | Kali and ubuntu-server both running during the lab | Included |
 | 02 | 02_ubuntu_adapter2_hostonly.png | Setup | Host-only isolated network adapter | Included |
-| 03 | 03_snapshots_both_vms.png | Setup | Checkpoints / rollback points | TO TAKE |
+| 03 | (not taken) | Setup | Kali checkpoint is 'Snapshot 1' (screenshot 01). Ubuntu was built from scratch for the lab; no pre-lab snapshot exists - rollback is via the documented per-change rollback steps | n/a |
 | 04 | 04_kali_ip_addr.png | Setup | Kali eth1 = 192.168.56.101 | Included |
 | 05 | 05_ubuntu_build_ports_nat_down.png | Steps 3-4 | :80 and :8080 listening, UFW inactive, NAT adapter down, host-only up | Included |
 | 06 | 06_kali_baseline_nmap_listing.png | Step 4 | Baseline: 80 and 8080 open; browsable listing of archive/ and public/ | Included |
@@ -41,7 +42,7 @@ Ubuntu's clock runs ~15 minutes behind Kali's (NAT disconnected, no time sync); 
 | 17b | 17b_final_state_ubuntu_and_shipping.png | Final state | nginx active; grc-legacy disabled; UFW active (only 192.168.56.101 -> 80/tcp); only :80 listening (no :8080); then Ubuntu evidence files copied to Kali with scp | Included |
 | 17c | 17c_recovery_ok_kali.png | Step 10 | R1 403 after deletion, then R2 200 after restore (2026-11-10T09:57:41+01:00) | Included |
 | 18a | 18_kali_commit_push_evidence.png | Submission | Evidence committed and pushed to GitHub (780f7ce..3095c43) | Included |
-| 18 | 18_records_workbook.png | Steps 11-12 | Costs, ALE, residual risk | TO TAKE |
-| 19 | 19_github_repo_final.png | Submission | Final repository state | TO TAKE |
+| 18 | (workbook, not a screenshot) | Steps 11-12 | Costs, ALE and recovery time are in calculations/cost_analysis.xlsx | n/a |
+| 19 | 19_github_repo_final.png | Submission | Final repository state (take after the last upload) | TO TAKE after upload |
 
 Excluded on purpose: the first baseline run (09:07), taken before the server was built; it showed the default nginx page and port 8080 closed, so it is NOT valid baseline evidence.
