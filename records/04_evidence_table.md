@@ -1,4 +1,4 @@
-# Evidence Table — Chioma Ameh | C11/26/CGRCE/17567
+# Evidence Table - Chioma Ameh | C11/26/CGRCE/17567
 
 All rows are taken from the real outputs captured in this lab (Kali `test-results.csv`, Ubuntu Nginx and kernel logs).
 Kali timestamps are UTC+01:00 (WAT). Ubuntu logs are in Ubuntu's own clock (UTC), which is **not synchronised**
